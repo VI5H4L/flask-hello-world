@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-import joblib
+# import joblib
 import os
 
 app = Flask(__name__)
@@ -24,11 +24,11 @@ def json_data():
     }
     return jsonify(dummy_data)
 
-@app.route('/predict', methods=['POST'])
-def predict():
-    data = request.json
-    prediction = model.predict([[data['sepal_length'], data['sepal_width'], data['petal_length'], data['petal_width']]])
-    return jsonify({'prediction': prediction.tolist()})
+# @app.route('/predict', methods=['POST'])
+# def predict():
+#     data = request.json
+#     prediction = model.predict([[data['sepal_length'], data['sepal_width'], data['petal_length'], data['petal_width']]])
+#     return jsonify({'prediction': prediction.tolist()})
 
 
 if __name__ == '__main__':
