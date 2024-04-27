@@ -1,9 +1,11 @@
 from flask import Flask, jsonify, request
 import joblib
+import os
 
 app = Flask(__name__)
 
-model = joblib.load('../iris_model.pkl')
+model_path = os.path.join(os.path.dirname(__file__), 'iris_model.pkl')
+model = joblib.load(model_path)
 
 @app.route('/')
 def home():
