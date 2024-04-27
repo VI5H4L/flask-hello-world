@@ -29,7 +29,3 @@ def predict():
     data = request.json
     prediction = model.predict([[data['sepal_length'], data['sepal_width'], data['petal_length'], data['petal_width']]])
     return jsonify({'prediction': prediction.tolist()})
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
